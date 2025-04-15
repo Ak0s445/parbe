@@ -6,6 +6,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ListView;
 import javafx.scene.control.cell.TextFieldListCell;
 import javafx.stage.Stage;
@@ -72,7 +74,13 @@ public class MainController {
 
        if (index == -1) {
         System.err.println("Hiba, nincs kijelölt elem");
-        return;}
+        Alert alert = new Alert(AlertType.ERROR);
+        alert.setTitle("Hiba");
+        alert.setHeaderText("Kiválasztás");
+        alert.setContentText("Hiba! Nincs kiválasztva elem!");
+        alert.showAndWait();
+        return;
+       }
 
       String res = this.carList.getItems().remove(index);
        System.out.println("Törölve: " + res);
