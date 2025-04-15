@@ -9,6 +9,6 @@
    <children>
       <Button layoutX="395.0" layoutY="22.0" mnemonicParsing="false" onAction="#onClickCloseButton" text="Mentés" />
       <Label layoutX="57.0" layoutY="150.0" text="Rendszám" />
-      <TextField fx:id="plateField" layoutX="168.0" layoutY="146.0" />
+      <TextField fx:id="plateField" layoutX="168.0" layoutY="146.0" onKeyReleased="#onKeyReleasedPlateField" />
    </children>
 </Pane>
